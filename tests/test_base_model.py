@@ -39,7 +39,7 @@ class TestBaseModelInit(unittest.TestCase):
         base.id = 1
         base.created_at = base.updated_at = time_dummy
         base_str = base.__str__()
-        self.assertIn("[BaseModel] (<1>)", base_str)
+        self.assertIn("[BaseModel] (1)", base_str)
         self.assertIn("'id': 1", base_str)
         self.assertIn("'created_at': " + time_str, base_str)
         self.assertIn("'updated_at': " + time_str, base_str)

@@ -12,7 +12,7 @@ import unittest
 from models.base_model import BaseModel
 
 
-class TestBaseModelInit(unittest.TestCase):
+class TestBaseModel_init(unittest.TestCase):
     """Tests for Initialization of BaseModel objects."""
 
     def test_init_no_args(self):

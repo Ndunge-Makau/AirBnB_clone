@@ -3,17 +3,22 @@
 Defines the BaseModel Class.
 """
 import datetime
-import models
 from uuid import uuid4
 
 
 class BaseModel:
     """Defines all common attributes/methods for other classes"""
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Initialize base object."""
         self.id = str(uuid4())
         self.created_at = datetime.datetime.now()
         self.updated_at = self.created_at
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                if key == 'created_at' or key == 'updated_at':
+                    self.__dict__[key] = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                else:
+                    self.__dict__[key] = value
 
     def __str__(self):
         """Returns string representation"""

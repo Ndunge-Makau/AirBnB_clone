@@ -20,6 +20,15 @@ class TestBaseModelInit(unittest.TestCase):
         base = BaseModel()
         self.assertIsInstance(base, BaseModel)
 
+    def test_init_all_kwargs(self):
+        """Test initialization with keyword args"""
+        my_time = '2017-06-14T22:31:03.285259'
+        base_dict = {'id': 1, 'created_at': my_time, 'updated_at': my_time}
+        base = BaseModel(**base_dict)
+        self.assertEqual(base.id, 1)
+        self.assertEqual(base.created_at, datetime.datetime(2017, 6, 14, 22, 31, 3, 285259))
+        self.assertEqual(base.updated_at, datetime.datetime(2017, 6, 14, 22, 31, 3, 285259))
+
     def test_unique_ids(self):
         """Tests if ids are unique"""
         base1 = BaseModel()
@@ -55,6 +64,7 @@ class TestSave(unittest.TestCase):
         base.save()
         self.assertNotEqual(upt_1, base.updated_at)
         self.assertLess(upt_1, base.updated_at)
+
 
 class TestToDict(unittest.TestCase):
     """Tests the to_dict method"""

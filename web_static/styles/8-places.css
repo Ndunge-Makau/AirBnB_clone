@@ -1,0 +1,79 @@
+.places {
+	align-items: top-left;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+
+}
+
+.places article {
+	width: 390px;
+	padding: 20px;
+	margin: 20px;
+	border: #FF5A5F solid 1px;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.places article h2 {
+	font-size: 30px;
+}
+
+.places h1 {
+	flex: 0 0 100%;
+	margin-bottom: 0;
+	font-size: 30px;
+}
+
+footer {
+	position: relative;
+}
+
+.name_price {
+	display: flex;
+	justify-content: space-between;	
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.name_price .price_by_night {
+	color: #FF5A5F;
+	border: #FF5A5F solid 4px;
+	border-radius: 50%;
+	min-width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	padding: 15px;
+}
+
+.places h2 {
+	margin: 0 auto;
+}
+
+.places .information {
+	display: flex;
+	justify-content: space-around;
+	height: 80px;
+	border-top: #DDDDDD solid 1px;
+	border-bottom: #DDDDDD solid 1px;
+	align-items: center;
+}
+
+.information div {
+	width: 100px;
+}
+
+.places .user {
+	padding: 20px 20px 0 0;
+}
+
+.places .description, .places .user {
+	text-align: left;
+}
+
+.information p {
+	margin: 0;
+}
